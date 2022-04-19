@@ -1,0 +1,25 @@
+$(function() {
+
+    scaleW = window.innerWidth / 320;
+    scaleH = window.innerHeight / 480;
+    $('.resize').each(function() {
+        var resizes = $(this);
+        var w = parseInt(resizes.width()) * scaleW;
+        var h = parseInt(resizes.height()) * scaleH;
+        var top = parseInt(w / 2) + 'px';
+        var mleft = -parseInt(w / 2) + 'px';
+        resizes.css({
+            "width": w,
+            "height": h,
+            "margin-left": mleft
+        });
+    });
+    window.onload = function() {
+        var windowWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        $("html").css("font-size", windowWidth / 8);
+        $("body").show();
+    };
+});
+
+ 
+
